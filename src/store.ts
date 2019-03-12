@@ -1,19 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { ConcreteService } from './vuex/ConcreteService.vuex';
+import { Animal } from './vuex/Animal.vuex';
 
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   modules: {
-    myService: ConcreteService.ExtractVuexModule( ConcreteService ),
+    animal: Animal.ExtractVuexModule( Animal ),
   },
 })
 
-console.log( ConcreteService.ExtractVuexModule( ConcreteService ) );
 
 export const vxm = {
-  myService: ConcreteService.CreateProxy( store, ConcreteService ),
+  animal: Animal.CreateProxy( store, Animal ),
 }
 
-
+console.log( vxm.animal );

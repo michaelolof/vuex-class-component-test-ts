@@ -1,33 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <div class="">
-      <h4>Data</h4>
-      <!-- <Increaser /> -->
-    </div>
-    <div>
-      Name
-      <button>Add to Name</button>
-    </div>
+    <div></div>
   </div>
 </template>
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
-  // import Increaser from './components/Increaser.vue';
-  import { vxm } from './store';
+  import { vxm } from "./store";
 
   @Component({
-    components: {
-      // Increaser,
-    },
   })
   export default class App extends Vue {
-    mounted() {
-      this.$store.dispatch("myService/doSomething").then( val => console.log( val ) );
-
-      // vxm.myService.doSomething()
-      // .then( val => console.log( val ) )
+    async mounted() {
+      const dd = await vxm.animal.fetch();
+      console.log( dd );
     }
   }
 </script>
