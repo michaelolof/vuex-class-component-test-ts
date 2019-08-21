@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <div></div>
+    <component :is="view">
+      <basic />
+    </component>
+
+    <div class="section button-blk">
+      <button @click="showView( 'basic' )">Test Basic</button>
+    </div>
+
   </div>
 </template>
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
-  import { vxm } from "./store";
+  import Basic from "./components/Basic.vue"
 
   @Component({
-  })
+    components: {
+      Basic,
+    }
+  }) 
   export default class App extends Vue {
-    async mounted() {
-      const dd = await vxm.animal.fetch();
-      console.log( dd );
+    
+    view = "basic";
+
+    showView( view ) {
+      this.view = view;
     }
   }
 </script>
@@ -23,8 +35,27 @@
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
+  line-height: 1.3em;
   margin-top: 60px;
+  margin-left: 20%;
+}
+.pre {
+  font-size: 0.75em;
+  display: block
+}
+.block {
+  display: block;
+}
+.section {
+  margin-bottom: 10px;
+}
+.button-blk {
+  margin-top: 50px;
+}
+.button-blk button {
+  display: inline-block;
+  margin-right: 10px;
 }
 </style>

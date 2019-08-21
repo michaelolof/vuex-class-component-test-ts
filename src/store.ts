@@ -1,18 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { Animal } from './vuex/Animal.vuex';
+import { BasicModel } from './vuex/Basic.vuex';
 
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   modules: {
-    animal: Animal.ExtractVuexModule( Animal ),
+    basic: BasicModel.ExtractVuexModule( BasicModel ),
   },
 })
 
-
 export const vxm = {
-  animal: Animal.CreateProxy( store, Animal ),
+  basic: BasicModel.CreateProxy( store, BasicModel ),
 }
 
-console.log( vxm.animal );
+
