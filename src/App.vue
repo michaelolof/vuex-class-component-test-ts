@@ -58,4 +58,8 @@
   display: inline-block;
   margin-right: 10px;
 }
+.l-e {
+  display: flex;
+  justify-content: space-between;
+}
 </style>

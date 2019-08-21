@@ -1,39 +1,55 @@
 <template>
-  <div>
+  <div class="l-e">
+    <div class="left">
 
-    <h1>Basic Functionality</h1>
-    
-    <input type="text" class="section" v-model="basic.lastname" />
-    
-    <div class="section">
-      Fullname: {{ fullname }}
-      <span class="pre">Display an explicit getter.</span>
-    </div>
-
-    <div class="section">
-      Lastname: {{ lastname }}
-      <span class="pre">Expose a 'lastname' state as a getter.</span>
-    </div>
-
-    <div class="section">
-      <input type="text" v-model="firstnameField" />
-      <button @click="setFirstName" class="block">Set First Name</button>
-      <button @click="clearFirstName" class="block">Clear First Name</button>
-      <span class="pre">Test 'setFirstName' and 'clearFirstName' mutations</span>
-    </div>
-
-    <div class="section">
-      <button @click="waitTwoSecondsAndClearName">Wait Two Seconds and Clear Name</button>
-      <span class="pre section">trigger an action that calls a mutation and mutates a state</span>
+      <h1>Basic Functionality</h1>
       
-      <div>Fetched Fullname: {{ fetchedFullname }}</div>
-      <button @click="fetchDetails">Fetch Details</button>
-      <span class="pre section">trigger an action that returns a getter after 2 secs.</span>
+      <input type="text" class="section" v-model="basic.lastname" />
+      
+      <div class="section">
+        Fullname: {{ fullname }}
+        <span class="pre">Display an explicit getter.</span>
+      </div>
 
-      <button @click="clearAndFetch">Clear and Fetch</button>
-      <span class="pre">call 'clearName' action and 'fetchDetails' action</span>
+      <div class="section">
+        Lastname: {{ lastname }}
+        <span class="pre">Expose a 'lastname' state as a getter.</span>
+      </div>
+
+      <div class="section">
+        <input type="text" v-model="firstnameField" />
+        <button @click="setFirstName" class="block">Set First Name</button>
+        <button @click="clearFirstName" class="block">Clear First Name</button>
+        <span class="pre">Test 'setFirstName' and 'clearFirstName' mutations</span>
+      </div>
+
+      <div class="section">
+        <button @click="waitTwoSecondsAndClearName">Wait Two Seconds and Clear Name</button>
+        <span class="pre section">trigger an action that calls a mutation and mutates a state</span>
+        
+        <div>Fetched Fullname: {{ fetchedFullname }}</div>
+        <button @click="fetchDetails">Fetch Details</button>
+        <span class="pre section">trigger an action that returns a getter after 2 secs.</span>
+
+        <button @click="clearAndFetch">Clear and Fetch</button>
+        <span class="pre">call 'clearName' action and 'fetchDetails' action</span>
+      </div>
+
+
     </div>
 
+    <div class="right">
+      <h2>Test Coverage</h2>
+      <ul>
+        <li>Basic Functionality of OLD API works</li>
+        <li>Vuex State and Proxy</li>
+        <li>Vuex Getters and Proxy</li>
+        <li>Ability of getters to return other getters and state</li>
+        <li>Vuex mutations and Proxy</li>
+        <li>Vuex actions and Proxy</li>
+        <li>Defined namespacedPath</li>
+      </ul>
+    </div>
 
   </div>
 </template>
